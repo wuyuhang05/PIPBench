@@ -4,7 +4,7 @@ name: Deploy static content to Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["master"]
+    branches: ["main", "master"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -33,11 +33,33 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      - name: Validate static assets
+        run: |
+          test -f index.html
+          test -f .nojekyll
+          test -f static/css/index.css
+          test -f static/css/bulma.min.css
+          test -f static/js/index.js
+          test -f static/js/fontawesome.all.min.js
+          test -f static/images/favicon.ico
+          test -f static/images/paper/teaser-v2.png
+          test -f static/images/paper/pipeline-v6.png
+          test -f static/images/paper/judges-win-tie-loss.png
+          test -f static/images/paper/comparison-mini.png
+      - name: Prepare static site
+        run: |
+          mkdir -p _site
+          rsync -a \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='.DS_Store' \
+            --exclude='ECCV_2026_paper' \
+            --exclude='_site' \
+            ./ _site/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
-          path: '.'
+          path: '_site'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
