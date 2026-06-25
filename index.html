@@ -3,518 +3,603 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <!-- Primary Meta Tags -->
-  <!-- TODO: Replace with your paper title and author names -->
-  <meta name="title" content="PAPER_TITLE - AUTHOR_NAMES">
-  <!-- TODO: Write a compelling 150-160 character description of your research -->
-  <meta name="description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Add 5-10 relevant keywords for your research area -->
-  <meta name="keywords" content="KEYWORD1, KEYWORD2, KEYWORD3, machine learning, computer vision, AI">
-  <!-- TODO: List all authors -->
-  <meta name="author" content="FIRST_AUTHOR_NAME, SECOND_AUTHOR_NAME">
+
+  <meta name="title" content="PIPBench: A Profile-Inclusive Framework for Personalized Image Generation Evaluation">
+  <meta name="description" content="PIPBench is a profile-inclusive benchmark for evaluating personalized image generation with real-user profiles, synthetic agents, and persona-aware Elo judging.">
+  <meta name="keywords" content="PIPBench, personalized image generation, text-to-image generation, benchmark, user preference, visual preference, profile-inclusive evaluation">
+  <meta name="author" content="Yuhang Wu, Shuxiang Zhang, Wee Hian Ching, Chi Zhang, Miao Liu">
   <meta name="robots" content="index, follow">
   <meta name="language" content="English">
-  
-  <!-- Open Graph / Facebook -->
+
   <meta property="og:type" content="article">
-  <!-- TODO: Replace with your institution or lab name -->
-  <meta property="og:site_name" content="INSTITUTION_OR_LAB_NAME">
-  <!-- TODO: Same as paper title above -->
-  <meta property="og:title" content="PAPER_TITLE">
-  <!-- TODO: Same as description above -->
-  <meta property="og:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Replace with your actual website URL -->
-  <meta property="og:url" content="https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE">
-  <!-- TODO: Create a 1200x630px preview image and update path -->
-  <meta property="og:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="PAPER_TITLE - Research Preview">
-  <meta property="article:published_time" content="2024-01-01T00:00:00.000Z">
-  <meta property="article:author" content="FIRST_AUTHOR_NAME">
+  <meta property="og:site_name" content="PIPBench">
+  <meta property="og:title" content="PIPBench: A Profile-Inclusive Framework for Personalized Image Generation Evaluation">
+  <meta property="og:description" content="A benchmark for evaluating whether image generation models can use user profiles and historically preferred images to align with individual visual tastes.">
+  <meta property="og:url" content="https://github.com/wuyuhang05/PIPBench">
+  <meta property="og:image" content="static/images/paper/teaser-v2.png">
+  <meta property="og:image:alt" content="PIPBench teaser showing personalized image generation with user profiles and preferred images">
+  <meta property="article:published_time" content="2026-01-01T00:00:00.000Z">
   <meta property="article:section" content="Research">
-  <meta property="article:tag" content="KEYWORD1">
-  <meta property="article:tag" content="KEYWORD2">
+  <meta property="article:tag" content="Personalized Image Generation">
+  <meta property="article:tag" content="Benchmark">
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <!-- TODO: Replace with your lab/institution Twitter handle -->
-  <meta name="twitter:site" content="@YOUR_TWITTER_HANDLE">
-  <!-- TODO: Replace with first author's Twitter handle -->
-  <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE">
-  <!-- TODO: Same as paper title above -->
-  <meta name="twitter:title" content="PAPER_TITLE">
-  <!-- TODO: Same as description above -->
-  <meta name="twitter:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Same as social preview image above -->
-  <meta name="twitter:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
-  <meta name="twitter:image:alt" content="PAPER_TITLE - Research Preview">
+  <meta name="twitter:title" content="PIPBench: Personalized Image Generation Evaluation">
+  <meta name="twitter:description" content="A profile-inclusive benchmark with real-user and synthetic-agent data for personalized text-to-image generation.">
+  <meta name="twitter:image" content="static/images/paper/teaser-v2.png">
+  <meta name="twitter:image:alt" content="PIPBench research preview">
 
-  <!-- Academic/Research Specific -->
-  <meta name="citation_title" content="PAPER_TITLE">
-  <meta name="citation_author" content="FIRST_AUTHOR_LAST, FIRST_AUTHOR_FIRST">
-  <meta name="citation_author" content="SECOND_AUTHOR_LAST, SECOND_AUTHOR_FIRST">
-  <meta name="citation_publication_date" content="2024">
-  <meta name="citation_conference_title" content="CONFERENCE_NAME">
-  <meta name="citation_pdf_url" content="https://YOUR_DOMAIN.com/static/pdfs/paper.pdf">
-  
-  <!-- Additional SEO -->
-  <meta name="theme-color" content="#2563eb">
-  <meta name="msapplication-TileColor" content="#2563eb">
+  <meta name="citation_title" content="PIPBench: A Profile-Inclusive Framework for Personalized Image Generation Evaluation">
+  <meta name="citation_author" content="Wu, Yuhang">
+  <meta name="citation_author" content="Zhang, Shuxiang">
+  <meta name="citation_author" content="Ching, Wee Hian">
+  <meta name="citation_author" content="Zhang, Chi">
+  <meta name="citation_author" content="Liu, Miao">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_conference_title" content="European Conference on Computer Vision">
+
+  <meta name="theme-color" content="#1f6f78">
+  <meta name="msapplication-TileColor" content="#1f6f78">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  
-  <!-- Preconnect for performance -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://ajax.googleapis.com">
-  <link rel="preconnect" href="https://documentcloud.adobe.com">
-  <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
+  <title>PIPBench | Personalized Image Generation Evaluation</title>
 
-  <!-- TODO: Replace with your paper title and authors -->
-  <title>PAPER_TITLE - AUTHOR_NAMES | Academic Research</title>
-  
-  <!-- Favicon and App Icons -->
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link rel="apple-touch-icon" href="static/images/favicon.ico">
-  
-  <!-- Critical CSS - Load synchronously -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/index.css">
-  
-  <!-- Non-critical CSS - Load asynchronously -->
-  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  
-  <!-- Fallback for browsers that don't support preload -->
-  <noscript>
-    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
-    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  </noscript>
-  
-  <!-- Fonts - Optimized loading -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
-  <!-- Defer non-critical JavaScript -->
-  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+
   <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script defer src="static/js/bulma-carousel.min.js"></script>
-  <script defer src="static/js/bulma-slider.min.js"></script>
   <script defer src="static/js/index.js"></script>
-  
-  <!-- Structured Data for Academic Papers -->
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ScholarlyArticle",
-    "headline": "PAPER_TITLE",
-    "description": "BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS",
+    "headline": "PIPBench: A Profile-Inclusive Framework for Personalized Image Generation Evaluation",
+    "description": "PIPBench evaluates personalized image generation conditioned on a short prompt and a small set of historically preferred images, with profile-inclusive real-user and synthetic-agent data.",
     "author": [
-      {
-        "@type": "Person",
-        "name": "FIRST_AUTHOR_NAME",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "INSTITUTION_NAME"
-        }
-      },
-      {
-        "@type": "Person",
-        "name": "SECOND_AUTHOR_NAME",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "INSTITUTION_NAME"
-        }
-      }
+      {"@type": "Person", "name": "Yuhang Wu", "affiliation": {"@type": "Organization", "name": "Tsinghua University"}},
+      {"@type": "Person", "name": "Shuxiang Zhang", "affiliation": {"@type": "Organization", "name": "Sun Yat-sen University"}},
+      {"@type": "Person", "name": "Wee Hian Ching", "affiliation": {"@type": "Organization", "name": "Tsinghua University"}},
+      {"@type": "Person", "name": "Chi Zhang", "affiliation": {"@type": "Organization", "name": "Tsinghua University; Shanghai Qi Zhi Institute"}},
+      {"@type": "Person", "name": "Miao Liu", "affiliation": {"@type": "Organization", "name": "Tsinghua University"}}
     ],
-    "datePublished": "2024-01-01",
-    "publisher": {
-      "@type": "Organization",
-      "name": "CONFERENCE_OR_JOURNAL_NAME"
-    },
-    "url": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE",
-    "image": "https://YOUR_DOMAIN.com/static/images/social_preview.png",
-    "keywords": ["KEYWORD1", "KEYWORD2", "KEYWORD3", "machine learning", "computer vision"],
-    "abstract": "FULL_ABSTRACT_TEXT_HERE",
-    "citation": "BIBTEX_CITATION_HERE",
+    "datePublished": "2026",
+    "publisher": {"@type": "Organization", "name": "European Conference on Computer Vision"},
+    "url": "https://github.com/wuyuhang05/PIPBench",
+    "image": "static/images/paper/teaser-v2.png",
+    "keywords": ["personalized image generation", "text-to-image generation", "benchmark", "visual preference", "user profile"],
     "isAccessibleForFree": true,
-    "license": "https://creativecommons.org/licenses/by/4.0/",
-    "mainEntity": {
-      "@type": "WebPage",
-      "@id": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE"
-    },
-    "about": [
-      {
-        "@type": "Thing",
-        "name": "RESEARCH_AREA_1"
-      },
-      {
-        "@type": "Thing", 
-        "name": "RESEARCH_AREA_2"
-      }
-    ]
-  }
-  </script>
-  
-  <!-- Website/Organization Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "INSTITUTION_OR_LAB_NAME",
-    "url": "https://YOUR_INSTITUTION_WEBSITE.com",
-    "logo": "https://YOUR_DOMAIN.com/static/images/favicon.ico",
-    "sameAs": [
-      "https://twitter.com/YOUR_TWITTER_HANDLE",
-      "https://github.com/YOUR_GITHUB_USERNAME"
-    ]
+    "codeRepository": "https://github.com/wuyuhang05/PIPBench",
+    "distribution": {
+      "@type": "DataDownload",
+      "contentUrl": "https://huggingface.co/datasets/AirRain03/PIPBench",
+      "name": "PIPBench dataset"
+    }
   }
   </script>
 </head>
+
 <body>
+  <nav class="top-nav" aria-label="Project navigation">
+    <a class="nav-brand" href="#main-content">PIPBench</a>
+    <div class="nav-links">
+      <a href="#task">Task</a>
+      <a href="#dataset">Dataset</a>
+      <a href="#evaluation">Evaluation</a>
+      <a href="#results">Results</a>
+      <a href="#resources">Resources</a>
+    </div>
+  </nav>
 
-
-  <!-- Scroll to Top Button -->
   <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
     <i class="fas fa-chevron-up"></i>
   </button>
 
-  <!-- More Works Dropdown -->
-  <div class="more-works-container">
-    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
-      <i class="fas fa-flask"></i>
-      More Works
-      <i class="fas fa-chevron-down dropdown-arrow"></i>
-    </button>
-    <div class="more-works-dropdown" id="moreWorksDropdown">
-      <div class="dropdown-header">
-        <h4>More Works from Our Lab</h4>
-        <button class="close-btn" onclick="toggleMoreWorks()">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-      <div class="works-list">
-        <!-- TODO: Replace with your lab's related works -->
-        <a href="https://arxiv.org/abs/PAPER_ID_1" class="work-item" target="_blank">
-          <div class="work-info">
-            <!-- TODO: Replace with actual paper title -->
-            <h5>Paper Title 1</h5>
-            <!-- TODO: Replace with brief description -->
-            <p>Brief description of the work and its main contribution.</p>
-            <!-- TODO: Replace with venue and year -->
-            <span class="work-venue">Conference/Journal 2024</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <!-- TODO: Add more related works or remove extra items -->
-        <a href="https://arxiv.org/abs/PAPER_ID_2" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 2</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <a href="https://arxiv.org/abs/PAPER_ID_3" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 3</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-
   <main id="main-content">
-  <section class="hero">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column has-text-centered">
-            <!-- TODO: Replace with your paper title -->
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
-            <div class="is-size-5 publication-authors">
-              <!-- TODO: Replace with your paper authors and their personal links -->
-              <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
-                <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
-                  <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
-                  </span>
-                  </div>
+    <section class="hero project-hero">
+      <div class="hero-body">
+        <div class="container is-max-widescreen">
+          <div class="has-text-centered">
+            <p class="venue">ECCV 2026</p>
+            <h1 class="title publication-title">PIPBench: A Profile-Inclusive Framework for Personalized Image Generation Evaluation</h1>
 
-                  <div class="is-size-5 publication-authors">
-                    <!-- TODO: Replace with your institution and conference/journal info -->
-                    <span class="author-block">Institution Name<br>Conference name and year</span>
-                    <!-- TODO: Remove this line if no equal contribution -->
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
-                  </div>
+            <div class="publication-authors">
+              <span class="author-block">Yuhang Wu<sup>1</sup></span>
+              <span class="author-block">Shuxiang Zhang<sup>2</sup></span>
+              <span class="author-block">Wee Hian Ching<sup>1</sup></span>
+              <span class="author-block">Chi Zhang<sup>1,3</sup></span>
+              <span class="author-block">Miao Liu<sup>1,&dagger;</sup></span>
+            </div>
 
-                  <div class="column has-text-centered">
-                    <div class="publication-links">
-                         <!-- TODO: Update with your arXiv paper ID -->
-                      <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
-                    </span>
+            <div class="publication-affiliations">
+              <span><sup>1</sup>Tsinghua University</span>
+              <span><sup>2</sup>Sun Yat-sen University</span>
+              <span><sup>3</sup>Shanghai Qi Zhi Institute</span>
+              <span><sup>&dagger;</sup>Corresponding author</span>
+            </div>
 
-                    <!-- TODO: Add your supplementary material PDF or remove this section -->
-                    <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span>
-
-                  <!-- TODO: Replace with your GitHub repository URL -->
-                  <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
-
-                <!-- TODO: Update with your arXiv paper ID -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://huggingface.co/datasets/AirRain03/PIPBench" target="_blank" rel="noopener" class="external-link button is-normal is-dark">
+                  <span class="icon"><i class="fas fa-database"></i></span>
+                  <span>Dataset</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/wuyuhang05/PIPBench" target="_blank" rel="noopener" class="external-link button is-normal is-dark">
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                  <span>Code</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#BibTeX" class="external-link button is-normal is-dark">
+                  <span class="icon"><i class="fas fa-quote-right"></i></span>
+                  <span>BibTeX</span>
                 </a>
               </span>
             </div>
+
+            <div class="hero-summary" aria-label="PIPBench highlights">
+              <div class="summary-item">
+                <span class="summary-value">First</span>
+                <span class="summary-label">profile-inclusive benchmark for personalized image generation</span>
+              </div>
+              <div class="summary-item">
+                <span class="summary-value">1,369</span>
+                <span class="summary-label">evaluation testcases across real users and synthetic agents</span>
+              </div>
+              <div class="summary-item">
+                <span class="summary-value">2-5</span>
+                <span class="summary-label">preferred images used as the personalization signal</span>
+              </div>
+              <div class="summary-item">
+                <span class="summary-value">91%</span>
+                <span class="summary-label">persona-aware judge agreement with human annotations</span>
+              </div>
+            </div>
           </div>
+
+          <figure class="teaser-figure">
+            <img src="static/images/paper/teaser-v2.png" alt="PIPBench problem setup and examples" loading="eager">
+            <figcaption>
+              PIPBench evaluates personalized image generation from a short prompt and a small set of user-preferred images, with user profiles providing implicit preference context.
+            </figcaption>
+          </figure>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-
-<!-- Teaser video-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <!-- TODO: Replace with your teaser video -->
-      <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
-        <!-- TODO: Add your video file path here -->
-        <source src="static/videos/banner_video.mp4" type="video/mp4">
-      </video>
-      <!-- TODO: Replace with your video description -->
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
-
-<!-- Paper abstract -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <!-- TODO: Replace with your paper abstract -->
+    <section class="section section-light" id="abstract">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Abstract</h2>
+        <div class="content paper-copy">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            Recent text-to-image models excel at following diverse prompts, but they remain largely blind to individual aesthetic preferences. PIPBench studies personalized image generation, where a model must align outputs with a user's implicit visual preferences given a few historically preferred images and a short prompt.
+          </p>
+          <p>
+            The benchmark introduces a profile-inclusive data construction pipeline that uses psychological and demographic profiling dimensions for real-user collection and scalable synthetic-agent generation. Experiments on representative methods reveal clear limitations in current preference-conditioning strategies and point to new opportunities for personalized text-to-image synthesis.
           </p>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-<!-- End paper abstract -->
+    </section>
 
+    <section class="section" id="contributions">
+      <div class="container is-max-widescreen">
+        <div class="section-heading">
+          <p class="eyebrow">Key Contributions</p>
+          <h2 class="title is-3">What PIPBench Adds</h2>
+          <p class="section-lead">
+            The benchmark makes implicit visual preference measurable by pairing user profiles, preferred images, and prompt-conditioned targets.
+          </p>
+        </div>
 
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- TODO: Replace with your research result images -->
-        <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/>
-        <!-- TODO: Replace with description of this result -->
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
+        <div class="contribution-grid">
+          <article class="contribution-card">
+            <span class="card-index">01</span>
+            <h3>Profile-inclusive benchmark</h3>
+            <p>Real user profiles pair demographic, psychological, and contextual signals with selected preferred images.</p>
+          </article>
+          <article class="contribution-card">
+            <span class="card-index">02</span>
+            <h3>Hybrid data engine</h3>
+            <p>Survey-calibrated real-user records are complemented by consistency-filtered synthetic agents for scale and diversity.</p>
+          </article>
+          <article class="contribution-card">
+            <span class="card-index">03</span>
+            <h3>Preference-aware evaluation</h3>
+            <p>Automatic metrics are paired with persona-aware Elo judging, so subjective preference fit is evaluated directly.</p>
+          </article>
+          <article class="contribution-card">
+            <span class="card-index">04</span>
+            <h3>Method diagnosis</h3>
+            <p>Representative conditioning strategies expose open challenges in multi-reference reasoning and prompt-preference balance.</p>
+          </article>
+        </div>
       </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
-  </div>
-</div>
-</div>
-</section>
-<!-- End image carousel -->
+    </section>
 
+    <section class="section" id="task">
+      <div class="container is-max-widescreen">
+        <div class="section-heading">
+          <p class="eyebrow">Problem Setting</p>
+          <h2 class="title is-3">Generate What This User Would Like</h2>
+          <p class="section-lead">
+            Each testcase asks a model to satisfy an explicit prompt while inferring latent visual taste from reference images.
+          </p>
+        </div>
 
+        <div class="task-equation" aria-label="Personalized image generation input and output">
+          <span>short prompt</span>
+          <i class="fas fa-plus"></i>
+          <span>preferred images</span>
+          <i class="fas fa-arrow-right"></i>
+          <strong>preference-aligned image</strong>
+        </div>
 
-
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- TODO: Replace with your YouTube video ID -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <div class="task-grid">
+          <div class="task-card">
+            <span class="task-icon"><i class="fas fa-keyboard"></i></span>
+            <h3>Input Prompt</h3>
+            <p>A short caption focuses on the primary visual content rather than exhaustive style instructions.</p>
+          </div>
+          <div class="task-card">
+            <span class="task-icon"><i class="fas fa-images"></i></span>
+            <h3>Preference Set</h3>
+            <p>Up to five historically preferred images provide signals for color, composition, mood, subject, and style.</p>
+          </div>
+          <div class="task-card">
+            <span class="task-icon"><i class="fas fa-user-check"></i></span>
+            <h3>Target Output</h3>
+            <p>The generated image should remain faithful to the prompt while matching the user's underlying preferences.</p>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-<!-- End youtube video -->
+    </section>
 
+    <section class="section section-light" id="dataset">
+      <div class="container is-max-widescreen">
+        <div class="section-heading">
+          <p class="eyebrow">Benchmark Construction</p>
+          <h2 class="title is-3">Profile-Inclusive Data Pipeline</h2>
+          <p class="section-lead">
+            PIPBench combines costly real-user calibration with scalable synthetic-agent construction, using the same profiling schema to keep both parts comparable.
+          </p>
+        </div>
 
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4" type="video/mp4">
-          </video>
+        <figure class="paper-figure">
+          <img src="static/images/paper/pipeline-v6.png" alt="PIPBench data construction pipeline" loading="lazy">
+          <figcaption>
+            Real users provide profiles and preferred images through surveys. Synthetic agents are sampled from the same profile schema and filtered for consistency and diversity before image prompts are generated.
+          </figcaption>
+        </figure>
+
+        <div class="pipeline-steps">
+          <div class="pipeline-step">
+            <span>1</span>
+            <h3>Profile users</h3>
+            <p>Collect psychological measures and personal context that can shape visual preferences.</p>
+          </div>
+          <div class="pipeline-step">
+            <span>2</span>
+            <h3>Generate candidates</h3>
+            <p>Use profile-conditioned LLM reasoning to produce image prompts and candidate sets.</p>
+          </div>
+          <div class="pipeline-step">
+            <span>3</span>
+            <h3>Select preferences</h3>
+            <p>Real users pick matching images; synthetic agents rank candidates automatically.</p>
+          </div>
+          <div class="pipeline-step">
+            <span>4</span>
+            <h3>Build testcases</h3>
+            <p>Each testcase pairs a short prompt with reference preferences and a target image.</p>
+          </div>
         </div>
-        <div class="item item-video2">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4" type="video/mp4">
-          </video>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-number">1,369</span>
+            <span class="stat-label">testcases</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">1,876</span>
+            <span class="stat-label">images</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">251</span>
+            <span class="stat-label">agents/users</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">76</span>
+            <span class="stat-label">real users</span>
+          </div>
         </div>
-        <div class="item item-video3">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video3" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4" type="video/mp4">
-          </video>
+
+        <div class="split-grid">
+          <div class="detail-card">
+            <h3>Real-User Dataset</h3>
+            <p>Built from a 19-item questionnaire and a second-stage preference selection process. Users choose 6-8 preferred images from generated candidate sets, producing human-calibrated records.</p>
+            <ul>
+              <li>134 valid profile responses after quality control</li>
+              <li>650 real-user testcases from 645 images</li>
+              <li>Profiles include psychological measures and personal context</li>
+            </ul>
+          </div>
+          <div class="detail-card">
+            <h3>Synthetic-Agent Dataset</h3>
+            <p>Scales benchmark coverage by sampling profile-consistent agents and ranking candidate images automatically, while preserving population diversity through rule checks.</p>
+            <ul>
+              <li>719 synthetic-agent testcases from 1,231 images</li>
+              <li>175 synthetic agents with consistency and diversity filtering</li>
+              <li>Supports additional training data for preference encoders</li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-<!-- End video carousel -->
+    </section>
 
+    <section class="section" id="evaluation">
+      <div class="container is-max-widescreen">
+        <div class="section-heading">
+          <p class="eyebrow">Evaluation</p>
+          <h2 class="title is-3">Hybrid Metrics for Preference Alignment</h2>
+          <p class="section-lead">
+            Automatic metrics track instruction fidelity and reference alignment, while persona-aware Elo evaluates subjective fit under a user profile.
+          </p>
+        </div>
 
+        <div class="metrics-grid">
+          <div class="metric-item">
+            <h3>CLS-T</h3>
+            <p>CLIP text-image similarity for prompt fidelity.</p>
+          </div>
+          <div class="metric-item">
+            <h3>LPIPS-R</h3>
+            <p>Perceptual distance to the user's reference images.</p>
+          </div>
+          <div class="metric-item">
+            <h3>CLS-R / DIS-R</h3>
+            <p>CLIP and DINO image-image similarities for reference alignment.</p>
+          </div>
+          <div class="metric-item">
+            <h3>Persona Elo</h3>
+            <p>Pairwise LLM-as-a-judge comparisons conditioned on full user profiles, with about 91% agreement against human annotations.</p>
+          </div>
+        </div>
 
-
-
-
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <!-- TODO: Replace with your poster PDF -->
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
+        <figure class="paper-figure compact-figure">
+          <img src="static/images/paper/judges-win-tie-loss.png" alt="Win, tie, and loss analysis for persona-aware judges" loading="lazy">
+          <figcaption>
+            Multiple judges reduce self-enhancement and position bias, while exposing differences between conservative and decisive persona-conditioned evaluations.
+          </figcaption>
+        </figure>
       </div>
-    </div>
-  </section>
-<!--End paper poster -->
+    </section>
 
+    <section class="section section-light" id="results">
+      <div class="container is-max-widescreen">
+        <div class="section-heading">
+          <p class="eyebrow">Results</p>
+          <h2 class="title is-3">Existing Methods Still Struggle with Preferences</h2>
+          <p class="section-lead">
+            Preference-aware methods generally improve alignment over a no-preference baseline, but multi-reference understanding and prompt-preference tradeoffs remain open problems.
+          </p>
+        </div>
 
+        <div class="result-callouts">
+          <div class="result-callout is-primary">
+            <span class="callout-label">Best real-user Elo</span>
+            <strong>1765</strong>
+            <p>GPT-5 fusion gains +338 Elo over the no-preference baseline.</p>
+          </div>
+          <div class="result-callout">
+            <span class="callout-label">Reference alignment</span>
+            <strong>22.160</strong>
+            <p>Best real-user DIS-R, an 83% relative increase over no-preference.</p>
+          </div>
+          <div class="result-callout is-warning">
+            <span class="callout-label">Multi-reference gap</span>
+            <strong>-167</strong>
+            <p>Two-reference editing trails one-reference editing in Elo, showing current fusion limits.</p>
+          </div>
+        </div>
 
-<!--BibTex citation -->
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <div class="bibtex-header">
-        <h2 class="title">BibTeX</h2>
-        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
-          <i class="fas fa-copy"></i>
-          <span class="copy-text">Copy</span>
-        </button>
+        <div class="table-container results-table-wrap">
+          <table class="table is-fullwidth results-table">
+            <thead>
+              <tr>
+                <th rowspan="2">Method</th>
+                <th colspan="3">Synthetic Agent</th>
+                <th colspan="4">Real-User</th>
+              </tr>
+              <tr>
+                <th>LPIPS-R &darr;</th>
+                <th>CLS-R &uarr;</th>
+                <th>DIS-R &uarr;</th>
+                <th>LPIPS-R &darr;</th>
+                <th>CLS-R &uarr;</th>
+                <th>DIS-R &uarr;</th>
+                <th>Elo &uarr;</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>No preference</td>
+                <td>0.7559</td>
+                <td>62.784</td>
+                <td>10.195</td>
+                <td>0.7448</td>
+                <td>62.761</td>
+                <td>12.099</td>
+                <td>1427</td>
+              </tr>
+              <tr>
+                <td>DreamBooth</td>
+                <td>0.7374</td>
+                <td>63.444</td>
+                <td>10.705</td>
+                <td>0.7265</td>
+                <td>63.751</td>
+                <td>12.720</td>
+                <td>1452</td>
+              </tr>
+              <tr>
+                <td>Qwen-Image-Edit (1-Ref)</td>
+                <td>0.7326</td>
+                <td>64.615</td>
+                <td>15.461</td>
+                <td>0.7209</td>
+                <td>65.802</td>
+                <td>18.459</td>
+                <td>1521</td>
+              </tr>
+              <tr>
+                <td>Qwen-Image-Edit (2-Ref)</td>
+                <td>0.7652</td>
+                <td>62.319</td>
+                <td>12.259</td>
+                <td>0.7511</td>
+                <td>65.023</td>
+                <td>16.821</td>
+                <td>1354</td>
+              </tr>
+              <tr class="highlight-row">
+                <td>GPT-5 fusion</td>
+                <td class="best-cell">0.6977</td>
+                <td class="best-cell">68.119</td>
+                <td class="second-cell">17.085</td>
+                <td class="best-cell">0.6867</td>
+                <td class="best-cell">69.574</td>
+                <td class="best-cell">22.160</td>
+                <td class="best-cell">1765</td>
+              </tr>
+              <tr>
+                <td>Gemini 2.5 Pro fusion</td>
+                <td class="second-cell">0.7038</td>
+                <td class="second-cell">67.335</td>
+                <td>14.403</td>
+                <td class="second-cell">0.6910</td>
+                <td class="second-cell">69.174</td>
+                <td>20.090</td>
+                <td class="second-cell">1615</td>
+              </tr>
+              <tr>
+                <td>QwenVL2.5-70B fusion</td>
+                <td>0.7183</td>
+                <td>65.894</td>
+                <td class="best-cell">17.336</td>
+                <td>0.7092</td>
+                <td>66.835</td>
+                <td class="second-cell">20.282</td>
+                <td>1531</td>
+              </tr>
+              <tr>
+                <td>Fabric</td>
+                <td>0.7277</td>
+                <td>64.531</td>
+                <td>13.367</td>
+                <td>0.7222</td>
+                <td>64.590</td>
+                <td>15.463</td>
+                <td>1412</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="finding-grid">
+          <div class="finding-card">
+            <h3>VLM condition fusion is strongest</h3>
+            <p>GPT-5 fusion obtains the highest real-user Elo and the best preference-alignment metrics among representative methods.</p>
+          </div>
+          <div class="finding-card">
+            <h3>More references are not automatically better</h3>
+            <p>Qwen-Image-Edit with two references underperforms its one-reference variant, showing that current models struggle to jointly interpret multiple preference examples.</p>
+          </div>
+          <div class="finding-card">
+            <h3>Profile-inclusive data matters</h3>
+            <p>Training on profile-inclusive synthetic data improves real-user alignment over profile-free data, including a 52.4% persona-aware win rate.</p>
+          </div>
+        </div>
       </div>
-      <pre id="bibtex-code"><code>@article{YourPaperKey2024,
-  title={Your Paper Title Here},
-  author={First Author and Second Author and Third Author},
-  journal={Conference/Journal Name},
-  year={2024},
-  url={https://your-domain.com/your-project-page}
+    </section>
+
+    <section class="section" id="visualizations">
+      <div class="container is-max-widescreen">
+        <div class="section-heading">
+          <p class="eyebrow">Visualization</p>
+          <h2 class="title is-3">Qualitative Comparisons</h2>
+          <p class="section-lead">
+            Preference-aware models add style and semantic traits beyond the short prompt, but can also overfit to an individual reference or conflict with instruction fidelity.
+          </p>
+        </div>
+
+        <figure class="paper-figure">
+          <img src="static/images/paper/comparison-mini.png" alt="PIPBench qualitative comparison across generation methods" loading="lazy">
+          <figcaption>
+            Visual comparison of no-preference, joint-conditioning, VLM-fusion, and separate-conditioning methods on personalized image generation cases.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section section-light" id="resources">
+      <div class="container is-max-desktop">
+        <div class="resource-panel">
+          <h2 class="title is-3">Resources</h2>
+          <p>
+            The dataset and repository are available for reproducing benchmark construction, evaluation, and future personalized image generation research.
+          </p>
+          <div class="resource-actions">
+            <a href="https://huggingface.co/datasets/AirRain03/PIPBench" target="_blank" rel="noopener" class="button is-dark">
+              <span class="icon"><i class="fas fa-database"></i></span>
+              <span>Hugging Face Dataset</span>
+            </a>
+            <a href="https://github.com/wuyuhang05/PIPBench" target="_blank" rel="noopener" class="button is-dark">
+              <span class="icon"><i class="fab fa-github"></i></span>
+              <span>GitHub Repository</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="BibTeX">
+      <div class="container is-max-desktop content">
+        <div class="bibtex-header">
+          <h2 class="title is-3">BibTeX</h2>
+          <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard" aria-label="Copy BibTeX to clipboard">
+            <i class="fas fa-copy"></i>
+            <span class="copy-text">Copy</span>
+          </button>
+        </div>
+        <pre id="bibtex-code"><code>@inproceedings{wu2026pipbench,
+  title={PIPBench: A Profile-Inclusive Framework for Personalized Image Generation Evaluation},
+  author={Wu, Yuhang and Zhang, Shuxiang and Ching, Wee Hian and Zhang, Chi and Liu, Miao},
+  booktitle={European Conference on Computer Vision (ECCV)},
+  year={2026},
+  url={https://github.com/wuyuhang05/PIPBench}
 }</code></pre>
-    </div>
-</section>
-<!--End BibTex citation -->
-
+      </div>
+    </section>
+  </main>
 
   <footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-
-          <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-
-        </div>
+    <div class="container is-max-desktop">
+      <div class="content has-text-centered">
+        <p>
+          This project page is adapted from the
+          <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank" rel="noopener">Academic Project Page Template</a>
+          and the <a href="https://nerfies.github.io" target="_blank" rel="noopener">Nerfies</a> project page.
+        </p>
       </div>
     </div>
-  </div>
-</footer>
-
-<!-- Statcounter tracking code -->
-  
-<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
-
-    <!-- End of Statcounter Code -->
-
-  </body>
-  </html>
+  </footer>
+</body>
+</html>
